@@ -1,162 +1,508 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional CV Service</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #f5f5f5;
-            color: #333;
-            text-align: center;
-        }
+<title>Professional CV Service</title>
 
-        header {
-            background: #222;
-            color: white;
-            padding: 60px 20px;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        header h1 {
-            font-size: 42px;
-            margin: 0;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background: #f8fafc;
+    color: #1e293b;
+    line-height: 1.6;
+}
 
-        header p {
-            font-size: 20px;
-        }
+/* Navigation */
+nav {
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
-        section {
-            max-width: 800px;
-            margin: 30px auto;
-            padding: 30px;
-            background: white;
-            border-radius: 15px;
-        }
+.nav-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 18px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        h2 {
-            color: #222;
-        }
+.logo {
+    font-size: 21px;
+    font-weight: bold;
+    color: #111827;
+}
 
-        .skills span {
-            display: inline-block;
-            background: #eee;
-            padding: 10px 18px;
-            margin: 5px;
-            border-radius: 20px;
-        }
+nav a {
+    text-decoration: none;
+    color: #334155;
+    margin-left: 22px;
+    font-size: 14px;
+}
 
-        footer {
-            background: #222;
-            color: white;
-            padding: 20px;
-            margin-top: 40px;
-        }
-    </style>
+/* Hero */
+.hero {
+    background: linear-gradient(135deg, #111827, #2563eb);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: auto;
+    color: #dbeafe;
+    font-size: 18px;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 28px;
+    background: white;
+    color: #111827;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+/* Sections */
+.section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 75px 20px;
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.intro {
+    text-align: center;
+    color: #64748b;
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+/* Cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
+}
+
+.card .icon {
+    font-size: 35px;
+}
+
+.card h3 {
+    margin: 12px 0;
+    font-size: 22px;
+}
+
+.card p {
+    color: #64748b;
+}
+
+/* Pricing */
+.price {
+    font-size: 35px;
+    font-weight: bold;
+    margin: 18px 0;
+    color: #2563eb;
+}
+
+.card ul {
+    list-style: none;
+    color: #64748b;
+}
+
+.card li {
+    margin: 9px 0;
+}
+
+.card li::before {
+    content: "✓ ";
+    color: #2563eb;
+    font-weight: bold;
+}
+
+/* Samples */
+.samples {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.sample {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 35px;
+    text-align: center;
+}
+
+.sample-icon {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+/* Features */
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.feature {
+    text-align: center;
+    padding: 20px;
+}
+
+.feature-icon {
+    font-size: 38px;
+}
+
+/* CTA */
+.cta {
+    background: #111827;
+    color: white;
+    border-radius: 25px;
+    padding: 60px 25px;
+    text-align: center;
+}
+
+.cta p {
+    color: #cbd5e1;
+    max-width: 650px;
+    margin: 12px auto;
+}
+
+/* Contact */
+.contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.contact-box {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 30px;
+}
+
+.contact-box h3 {
+    margin-bottom: 10px;
+}
+
+.contact-box p {
+    color: #64748b;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #64748b;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .cards,
+    .samples,
+    .features,
+    .contact {
+        grid-template-columns: 1fr;
+    }
+
+    nav .links {
+        display: none;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <header>
-        <h1>Professional CV Service</h1>
-        <p>Modern CV Design & Professional CV Writing</p>
-    </header>
+<!-- Navigation -->
+<nav>
+    <div class="nav-container">
 
-    <section>
-        <h2>About Me</h2>
-        <p>
-          I am a motivated and responsible individual with a strong interest in Receptionist and Customer Service roles. I enjoy communicating with people, providing friendly assistance, and creating a positive experience for every guest. I am a fast learner, work well with others, and always strive to improve my skills and contribute positively to the workplace.
-        </p>
-    </section>
-
-    <section>
-        <h2>My Skills</h2>
-
-        <div class="skills">
-            <span>Create CV/span>
-            <span>Customer Service</span>
-            <span>Teamwork</span>
-            <span>Computer Skills</span>
+        <div class="logo">
+            Professional CV Service
         </div>
-    </section>
 
-    <section>
-        <h2>Contact Me</h2>
-        <p>Email:yolsovannarak7@email.com</p>
-        <p>Phone: +855 15 859 259 </p>
-    </section>
-  <h2>Education</h2>
-    <h3>Hun Sen Borey 100 Khnang High school | Phnom Penh</h3>
-    <p>Team work
-    <p>Customer Service
-        Studied and developed skills in communication,
-        teamwork, and professional development.
+        <div class="links">
+            <a href="#services">Services</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#samples">Samples</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+    </div>
+</nav>
+
+
+<!-- Hero -->
+<section class="hero">
+
+    <h1>Build a CV That Gets Noticed.</h1>
+
+    <p>
+        Modern, professional and affordable CV design
+        for students, fresh graduates and job seekers.
+    </p>
+
+    <a class="button" href="#order">
+        Order Your CV
+    </a>
+
+</section>
+
+
+<!-- Services -->
+<section class="section" id="services">
+
+    <h2>Our Services</h2>
+
+    <p class="intro">
+        We help you present your education, skills and
+        experience in a clear and professional CV.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">📄</div>
+            <h3>CV Design</h3>
+            <p>
+                Clean and modern CV layouts
+                designed for your target job.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">✍️</div>
+            <h3>CV Writing</h3>
+            <p>
+                Professional wording for your
+                profile, skills and education.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📥</div>
+            <h3>PDF Delivery</h3>
+            <p>
+                Receive a polished CV ready
+                to send to employers.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Pricing -->
+<section class="section" id="pricing">
+
+    <h2>Pricing</h2>
+
+    <p class="intro">
+        Choose the package that fits your needs.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Basic CV</h3>
+
+            <div class="price">$5</div>
+
+            <ul>
+                <li>Clean CV design</li>
+                <li>Basic formatting</li>
+                <li>PDF file</li>
+            </ul>
+        </div>
+
+
+        <div class="card">
+            <h3>Professional CV</h3>
+
+            <div class="price">$10</div>
+
+            <ul>
+                <li>Modern CV design</li>
+                <li>Professional wording</li>
+                <li>PDF file</li>
+            </ul>
+        </div>
+
+
+        <div class="card">
+            <h3>Premium CV</h3>
+
+            <div class="price">$15</div>
+
+            <ul>
+                <li>Premium design</li>
+                <li>Full CV improvement</li>
+                <li>PDF + revisions</li>
+            </ul>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Samples -->
+<section class="section" id="samples">
+
+    <h2>CV Samples</h2>
+
+    <p class="intro">
+        Professional CV styles for different career needs.
+    </p>
+
+    <div class="samples">
+
+        <div class="sample">
+            <div class="sample-icon">📑</div>
+            <h3>Modern CV</h3>
+            <p>Professional modern layout</p>
+        </div>
+
+        <div class="sample">
+            <div class="sample-icon">📄</div>
+            <h3>Simple CV</h3>
+            <p>Clean and easy to read</p>
+        </div>
+
+        <div class="sample">
+            <div class="sample-icon">✨</div>
+            <h3>Premium CV</h3>
+            <p>Elegant premium style</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Why Choose Us -->
+<section class="section">
+
+    <div class="features">
+
+        <div class="feature">
+            <div class="feature-icon">⚡</div>
+            <h3>Fast Service</h3>
+            <p>Quick and convenient CV creation.</p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">🎯</div>
+            <h3>Job Focused</h3>
+            <p>Content designed for your target position.</p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">💼</div>
+            <h3>Professional</h3>
+            <p>Modern design that presents you professionally.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Order -->
+<section class="section" id="order">
+
+    <div class="cta">
+
+        <h2>Ready to Create Your CV?</h2>
+
+        <p>
+            Send us your information and we will
+            help turn it into a professional CV.
+        </p>
+
+        <a class="button" href="#contact">
+            Contact Us
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- Contact -->
+<section class="section" id="contact">
+
+    <h2>Contact Us</h2>
+
+    <p class="intro">
+        Contact us to start creating your professional CV.
+    </p>
+
+    <div class="contact">
+
+        <div class="contact-box">
+            <h3>📱 Phone / Telegram</h3>
+            <p>+855 XX XXX XXX</p>
+        </div>
+
+        <div class="contact-box">
+            <h3>✉️ Email</h3>
+            <p>your@email.com</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+    © 2026 Professional CV Service. All rights reserved.
+</footer>
 
 </body>
 </html>
-<section>
-    <h2I.>I am a motivated and responsible individual seeking an opportunity to start my career in Receptionist and Customer Service. I am eager to learn, develop my communication and professional skills, and provide friendly and helpful service to guests and customers. I am committed to working hard, learning quickly, and contributing positively to the team.</h2>
-
-    <h3>Receptionist / Customer Service</h3>
-    <p>OBS LOGISTICS | 2026 - 2026</p>
-
-    <ul>
-        <li>Welcomed and assisted customers professionally.</li>
-        <li>Handled customer inquiries and provided helpful information.</li>
-        <li>Communicated effectively with customers and team members.</li>
-        <li>Maintained a friendly and professional environment.</li>
-    </ul>
-</section>
-<section>
-    <h2>Our Services</h2>
-
-    <div class="services">
-        <div>
-            <h3>Basic CV</h3>
-            <p>Clean and simple CV design</p>
-            <h3>$5</h3>
-        </div>
-
-        <div>
-            <h3>Professional CV</h3>
-            <p>Modern design + professional content</p>
-            <h3>$10</h3>
-        </div>
-
-        <div>
-            <h3>Premium CV</h3>
-            <p>Premium design + complete CV service</p>
-            <h3>$15</h3>
-        </div>
-    </div>
-</section>
-</ul>
-<section>
-    <h2>Order Your CV</h2>
-    <p>
-        Ready for a professional CV?
-        Contact us and send your information to get started.
-    </p>
-
-    <a href="https://t.me/YourTelegramUsername" target="_blank">
-        <button>Order Your CV</button>
-    </a>
-</section>
-<section>
-    <h2>Order Your CV</h2>
-    <p>
-        Ready for a professional CV?
-        Contact us and send your information to get started.
-    </p>
-
-    <a href="https://t.me/Yolsovannarak" target="_blank">
-        <button>Order Your CV</button>
-    </a>
-</section>
-
-    <footer>
-        © 2026 My Portfolio
-    </footer>
