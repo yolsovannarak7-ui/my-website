@@ -4,352 +4,936 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Professional CV Service</title>
+<title>CV Design - Professional CV Service</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #f8fafc;
-    color: #1e293b;
-    line-height: 1.6;
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    color:#17345f;
+    background:#ffffff;
+    line-height:1.6;
 }
 
-/* Navigation */
-nav {
-    background: white;
-    border-bottom: 1px solid #e2e8f0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+html{
+    scroll-behavior:smooth;
 }
 
-.nav-container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 18px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.container{
+    width:90%;
+    max-width:1150px;
+    margin:auto;
 }
 
-.logo {
-    font-size: 21px;
-    font-weight: bold;
-    color: #111827;
+/* NAVBAR */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:white;
+    border-bottom:1px solid #e5edf7;
 }
 
-nav a {
-    text-decoration: none;
-    color: #334155;
-    margin-left: 22px;
-    font-size: 14px;
+.navbar{
+    height:75px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
-/* Hero */
-.hero {
-    background: linear-gradient(135deg, #111827, #2563eb);
-    color: white;
-    text-align: center;
-    padding: 100px 20px;
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:21px;
+    font-weight:bold;
 }
 
-.hero h1 {
-    font-size: 55px;
-    line-height: 1.1;
-    margin-bottom: 20px;
+.logo-icon{
+    width:40px;
+    height:45px;
+    border:3px solid #1677ff;
+    border-radius:7px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
 }
 
-.hero p {
-    max-width: 700px;
-    margin: auto;
-    color: #dbeafe;
-    font-size: 18px;
+.logo small{
+    display:block;
+    font-size:10px;
+    color:#8b9bb3;
+    font-weight:normal;
 }
 
-.button {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 14px 28px;
-    background: white;
-    color: #111827;
-    text-decoration: none;
-    border-radius: 10px;
-    font-weight: bold;
+.menu a{
+    text-decoration:none;
+    color:#34496b;
+    margin-left:28px;
+    font-size:14px;
 }
 
-/* Sections */
-.section {
-    max-width: 1100px;
-    margin: auto;
-    padding: 75px 20px;
+.menu a:hover{
+    color:#1677ff;
 }
 
-.section h2 {
-    text-align: center;
-    font-size: 35px;
-    margin-bottom: 12px;
+.order-btn{
+    background:#1677ff;
+    color:white !important;
+    padding:12px 20px;
+    border-radius:10px;
+    font-weight:bold;
 }
 
-.intro {
-    text-align: center;
-    color: #64748b;
-    max-width: 700px;
-    margin: 0 auto 40px;
+/* HERO */
+
+.hero{
+    background:linear-gradient(120deg,#f5faff,#edf6ff);
+    padding:80px 0;
+    overflow:hidden;
 }
 
-/* Cards */
-.cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
+.hero-content{
+    display:grid;
+    grid-template-columns:45% 55%;
+    align-items:center;
+    gap:30px;
 }
 
-.card {
-    background: white;
-    border: 1px solid #e2e8f0;
-    border-radius: 18px;
-    padding: 30px;
-    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
+.badge{
+    display:inline-block;
+    background:#dceeff;
+    color:#1677ff;
+    padding:7px 14px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:18px;
 }
 
-.card .icon {
-    font-size: 35px;
+.hero h1{
+    font-size:56px;
+    line-height:1.08;
+    margin-bottom:20px;
 }
 
-.card h3 {
-    margin: 12px 0;
-    font-size: 22px;
+.hero h1 span{
+    color:#1677ff;
 }
 
-.card p {
-    color: #64748b;
+.hero p{
+    color:#637693;
+    font-size:17px;
+    max-width:500px;
 }
 
-/* Pricing */
-.price {
-    font-size: 35px;
-    font-weight: bold;
-    margin: 18px 0;
-    color: #2563eb;
+.hero-buttons{
+    margin-top:28px;
 }
 
-.card ul {
-    list-style: none;
-    color: #64748b;
+.btn-primary,
+.btn-secondary{
+    display:inline-block;
+    text-decoration:none;
+    padding:14px 24px;
+    border-radius:10px;
+    font-weight:bold;
+    margin-right:10px;
 }
 
-.card li {
-    margin: 9px 0;
+.btn-primary{
+    background:#1677ff;
+    color:white;
 }
 
-.card li::before {
-    content: "✓ ";
-    color: #2563eb;
-    font-weight: bold;
+.btn-secondary{
+    border:1px solid #1677ff;
+    color:#1677ff;
+    background:white;
 }
 
-/* Samples */
-.samples {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+.checks{
+    margin-top:22px;
+    color:#526987;
+    font-size:13px;
 }
 
-.sample {
-    background: white;
-    border: 1px solid #e2e8f0;
-    border-radius: 16px;
-    padding: 35px;
-    text-align: center;
+.checks span{
+    margin-right:18px;
 }
 
-.sample-icon {
-    font-size: 45px;
-    margin-bottom: 10px;
+/* CV PREVIEWS */
+
+.cv-showcase{
+    position:relative;
+    height:390px;
 }
 
-/* Features */
-.features {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+.cv{
+    position:absolute;
+    width:220px;
+    height:315px;
+    background:white;
+    border-radius:5px;
+    box-shadow:0 15px 35px rgba(30,70,120,.18);
+    padding:20px;
 }
 
-.feature {
-    text-align: center;
-    padding: 20px;
+.cv h3{
+    font-size:15px;
+    margin-bottom:5px;
 }
 
-.feature-icon {
-    font-size: 38px;
+.cv p{
+    font-size:7px;
+    margin:5px 0;
+}
+
+.cv-line{
+    height:5px;
+    background:#dce7f5;
+    margin:7px 0;
+    border-radius:5px;
+}
+
+.cv-left{
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    background:#dceeff;
+    margin-bottom:15px;
+}
+
+.cv1{
+    left:0;
+    top:45px;
+    transform:rotate(-8deg);
+}
+
+.cv2{
+    left:180px;
+    top:0;
+    width:250px;
+    height:350px;
+    border-top:7px solid #1677ff;
+    z-index:3;
+}
+
+.cv3{
+    right:0;
+    top:55px;
+    transform:rotate(8deg);
+}
+
+.cv2 .side{
+    position:absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    width:65px;
+    background:#173b70;
+    border-radius:5px 0 0 5px;
+}
+
+.cv2 .inside{
+    margin-left:65px;
+}
+
+/* SECTIONS */
+
+section{
+    padding:75px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title small{
+    color:#1677ff;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.section-title h2{
+    font-size:35px;
+    margin-top:5px;
+}
+
+.section-title p{
+    color:#71829a;
+    max-width:650px;
+    margin:10px auto;
+}
+
+/* SERVICES */
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.service{
+    padding:30px;
+    border:1px solid #e2ebf5;
+    border-radius:15px;
+    background:white;
+    box-shadow:0 8px 25px rgba(30,70,120,.05);
+}
+
+.service-icon{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:#e4f2ff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+}
+
+.service h3{
+    margin:15px 0 8px;
+}
+
+.service p{
+    color:#71829a;
+    font-size:14px;
+}
+
+/* SAMPLES */
+
+.samples-section{
+    background:#f3f8ff;
+}
+
+.samples{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.sample{
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(30,70,120,.07);
+}
+
+.sample-cv{
+    height:300px;
+    background:#f7f9fc;
+    border:1px solid #dce5f0;
+    padding:20px;
+    text-align:left;
+}
+
+.sample-cv .photo{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:#d8eaff;
+    margin-bottom:15px;
+}
+
+.sample-cv .line{
+    height:6px;
+    background:#dce5f0;
+    margin:8px 0;
+}
+
+.sample-cv .blue{
+    background:#1677ff;
+    width:55%;
+}
+
+.sample h3{
+    margin-top:15px;
+}
+
+.sample p{
+    color:#8190a5;
+    font-size:13px;
+}
+
+/* PRICING */
+
+.pricing{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.price-card{
+    position:relative;
+    padding:30px;
+    border:1px solid #e1eaf4;
+    border-radius:16px;
+    background:white;
+    box-shadow:0 8px 25px rgba(30,70,120,.05);
+}
+
+.price-card.popular{
+    border:2px solid #1677ff;
+    transform:translateY(-8px);
+}
+
+.popular-label{
+    position:absolute;
+    top:-14px;
+    left:50%;
+    transform:translateX(-50%);
+    background:#1677ff;
+    color:white;
+    padding:5px 15px;
+    border-radius:20px;
+    font-size:11px;
+    font-weight:bold;
+}
+
+.price{
+    font-size:38px;
+    font-weight:bold;
+    color:#1677ff;
+    margin:15px 0;
+}
+
+.price-card ul{
+    list-style:none;
+    color:#6f819c;
+}
+
+.price-card li{
+    margin:9px 0;
+}
+
+.price-card li::before{
+    content:"✓ ";
+    color:#1677ff;
+    font-weight:bold;
+}
+
+.price-button{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#eaf4ff;
+    color:#1677ff;
+    padding:12px;
+    border-radius:9px;
+    margin-top:20px;
+    font-weight:bold;
+}
+
+.popular .price-button{
+    background:#1677ff;
+    color:white;
+}
+
+/* WHY US */
+
+.why{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.why-box{
+    text-align:center;
+    padding:25px;
+}
+
+.why-icon{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.why-box p{
+    color:#71829a;
+    font-size:14px;
 }
 
 /* CTA */
-.cta {
-    background: #111827;
-    color: white;
-    border-radius: 25px;
-    padding: 60px 25px;
-    text-align: center;
+
+.cta{
+    background:#10376b;
+    color:white;
+    border-radius:18px;
+    padding:45px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
-.cta p {
-    color: #cbd5e1;
-    max-width: 650px;
-    margin: 12px auto;
+.cta p{
+    color:#cbdaf0;
+    margin-top:5px;
 }
 
-/* Contact */
-.contact {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
+.cta a{
+    background:#1677ff;
+    color:white;
+    padding:14px 25px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
 }
 
-.contact-box {
-    background: white;
-    border: 1px solid #e2e8f0;
-    border-radius: 18px;
-    padding: 30px;
+/* CONTACT */
+
+.contact{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
 }
 
-.contact-box h3 {
-    margin-bottom: 10px;
+.contact-box{
+    border:1px solid #e1eaf4;
+    border-radius:15px;
+    padding:30px;
+    background:white;
 }
 
-.contact-box p {
-    color: #64748b;
+.contact-box p{
+    color:#71829a;
+    margin-top:5px;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 30px;
-    color: #64748b;
+/* FOOTER */
+
+footer{
+    background:#f3f7fc;
+    padding:30px;
+    text-align:center;
+    color:#71829a;
+    font-size:13px;
 }
 
-/* Mobile */
-@media (max-width: 800px) {
+/* MOBILE */
 
-    .hero h1 {
-        font-size: 40px;
+@media(max-width:850px){
+
+    .menu{
+        display:none;
     }
 
-    .cards,
+    .hero-content{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .cv-showcase{
+        transform:scale(.8);
+        margin-top:-30px;
+    }
+
+    .services,
     .samples,
-    .features,
-    .contact {
-        grid-template-columns: 1fr;
+    .pricing,
+    .why,
+    .contact{
+        grid-template-columns:1fr;
     }
 
-    nav .links {
-        display: none;
+    .price-card.popular{
+        transform:none;
+    }
+
+    .cta{
+        flex-direction:column;
+        text-align:center;
+        gap:25px;
     }
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- Navigation -->
+
+<!-- NAVIGATION -->
+
 <nav>
-    <div class="nav-container">
+<div class="container navbar">
 
-        <div class="logo">
-            Professional CV Service
+    <div class="logo">
+        <div class="logo-icon">📄</div>
+        <div>
+            CV Design
+            <small>Your Success, Our Priority</small>
         </div>
-
-        <div class="links">
-            <a href="#services">Services</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#samples">Samples</a>
-            <a href="#contact">Contact</a>
-        </div>
-
     </div>
+
+    <div class="menu">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#samples">Samples</a>
+        <a href="#contact">Contact</a>
+        <a class="order-btn" href="#order">Order Now</a>
+    </div>
+
+</div>
 </nav>
 
 
-<!-- Hero -->
-<section class="hero">
+<!-- HERO -->
 
-    <h1>Build a CV That Gets Noticed.</h1>
+<section class="hero" id="home">
 
-    <p>
-        Modern, professional and affordable CV design
-        for students, fresh graduates and job seekers.
-    </p>
+<div class="container hero-content">
 
-    <a class="button" href="#order">
-        Order Your CV
-    </a>
+    <div>
 
-</section>
-
-
-<!-- Services -->
-<section class="section" id="services">
-
-    <h2>Our Services</h2>
-
-    <p class="intro">
-        We help you present your education, skills and
-        experience in a clear and professional CV.
-    </p>
-
-    <div class="cards">
-
-        <div class="card">
-            <div class="icon">📄</div>
-            <h3>CV Design</h3>
-            <p>
-                Clean and modern CV layouts
-                designed for your target job.
-            </p>
+        <div class="badge">
+            Professional CV Design Service
         </div>
 
-        <div class="card">
-            <div class="icon">✍️</div>
-            <h3>CV Writing</h3>
-            <p>
-                Professional wording for your
-                profile, skills and education.
-            </p>
+        <h1>
+            Make Your CV
+            <span>Stand Out</span>
+        </h1>
+
+        <p>
+            Get a professional, modern and eye-catching CV
+            that helps you present yourself confidently to employers.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#order" class="btn-primary">
+                💬 Order Your CV
+            </a>
+
+            <a href="#samples" class="btn-secondary">
+                👁 View Samples
+            </a>
+
         </div>
 
-        <div class="card">
-            <div class="icon">📥</div>
-            <h3>PDF Delivery</h3>
-            <p>
-                Receive a polished CV ready
-                to send to employers.
-            </p>
+        <div class="checks">
+            <span>✓ Professional Design</span>
+            <span>✓ Fast Delivery</span>
+            <span>✓ Affordable Price</span>
         </div>
 
     </div>
 
+
+    <div class="cv-showcase">
+
+        <div class="cv cv1">
+            <div class="cv-left"></div>
+            <h3>PROFILE</h3>
+            <div class="cv-line"></div>
+            <div class="cv-line"></div>
+            <div class="cv-line"></div>
+            <h3>EDUCATION</h3>
+            <div class="cv-line"></div>
+            <div class="cv-line"></div>
+            <h3>SKILLS</h3>
+            <div class="cv-line"></div>
+            <div class="cv-line"></div>
+        </div>
+
+
+        <div class="cv cv2">
+
+            <div class="side"></div>
+
+            <div class="inside">
+
+                <div class="cv-left"></div>
+
+                <h3>PROFESSIONAL CV</h3>
+
+                <div class="cv-line"></div>
+                <div class="cv-line"></div>
+
+                <h3>PROFILE</h3>
+
+                <p>
+                    Motivated and responsible professional
+                    with strong communication skills.
+                </p>
+
+                <h3>EDUCATION</h3>
+
+                <div class="cv-line"></div>
+                <div class="cv-line"></div>
+
+                <h3>SKILLS</h3>
+
+                <div class="cv-line"></div>
+                <div class="cv-line"></div>
+                <div class="cv-line"></div>
+
+                <h3>EXPERIENCE</h3>
+
+                <div class="cv-line"></div>
+                <div class="cv-line"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="cv cv3">
+
+            <div class="cv-left"></div>
+
+            <h3>PROFILE</h3>
+
+            <div class="cv-line"></div>
+            <div class="cv-line"></div>
+
+            <h3>EXPERIENCE</h3>
+
+            <div class="cv-line"></div>
+            <div class="cv-line"></div>
+            <div class="cv-line"></div>
+
+            <h3>SKILLS</h3>
+
+            <div class="cv-line"></div>
+            <div class="cv-line"></div>
+
+        </div>
+
+    </div>
+
+</div>
 </section>
 
 
-<!-- Pricing -->
-<section class="section" id="pricing">
+<!-- SERVICES -->
 
-    <h2>Pricing</h2>
+<section id="services">
 
-    <p class="intro">
-        Choose the package that fits your needs.
-    </p>
+<div class="container">
 
-    <div class="cards">
+    <div class="section-title">
 
-        <div class="card">
+        <small>OUR SERVICES</small>
+
+        <h2>What We Offer</h2>
+
+        <p>
+            We provide professional CV design and writing
+            services to help you achieve your career goals.
+        </p>
+
+    </div>
+
+
+    <div class="services">
+
+        <div class="service">
+
+            <div class="service-icon">✏️</div>
+
+            <h3>CV Design</h3>
+
+            <p>
+                Modern and attractive CV layouts
+                designed for your career goals.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="service-icon">📋</div>
+
+            <h3>CV Writing</h3>
+
+            <p>
+                Professional and clear content
+                for your profile, skills and education.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="service-icon">📄</div>
+
+            <h3>PDF Delivery</h3>
+
+            <p>
+                Receive your finished CV in
+                high-quality PDF format.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- SAMPLES -->
+
+<section class="samples-section" id="samples">
+
+<div class="container">
+
+    <div class="section-title">
+
+        <small>CV SAMPLES</small>
+
+        <h2>Our CV Samples</h2>
+
+        <p>
+            Choose your favourite CV style and
+            let us create a professional CV for you.
+        </p>
+
+    </div>
+
+
+    <div class="samples">
+
+        <div class="sample">
+
+            <div class="sample-cv">
+
+                <div class="photo"></div>
+
+                <h4>MODERN CV</h4>
+
+                <div class="line blue"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+
+                <h5>PROFILE</h5>
+
+                <div class="line"></div>
+                <div class="line"></div>
+
+                <h5>EDUCATION</h5>
+
+                <div class="line"></div>
+                <div class="line"></div>
+
+            </div>
+
+            <h3>Modern CV</h3>
+            <p>Clean and professional</p>
+
+        </div>
+
+
+        <div class="sample">
+
+            <div class="sample-cv">
+
+                <div class="photo"></div>
+
+                <h4>SIMPLE CV</h4>
+
+                <div class="line"></div>
+                <div class="line"></div>
+
+                <h5>PROFILE</h5>
+
+                <div class="line blue"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+
+                <h5>SKILLS</h5>
+
+                <div class="line"></div>
+                <div class="line"></div>
+
+            </div>
+
+            <h3>Simple CV</h3>
+            <p>Clean and easy to read</p>
+
+        </div>
+
+
+        <div class="sample">
+
+            <div class="sample-cv">
+
+                <div class="photo"></div>
+
+                <h4>PREMIUM CV</h4>
+
+                <div class="line blue"></div>
+                <div class="line"></div>
+
+                <h5>PROFILE</h5>
+
+                <div class="line"></div>
+                <div class="line"></div>
+
+                <h5>EXPERIENCE</h5>
+
+                <div class="line blue"></div>
+                <div class="line"></div>
+
+            </div>
+
+            <h3>Premium CV</h3>
+            <p>Elegant premium design</p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- PRICING -->
+
+<section id="pricing">
+
+<div class="container">
+
+    <div class="section-title">
+
+        <small>PRICING</small>
+
+        <h2>Our Packages</h2>
+
+        <p>
+            Choose the package that fits your needs and budget.
+        </p>
+
+    </div>
+
+
+    <div class="pricing">
+
+        <div class="price-card">
+
             <h3>Basic CV</h3>
+
+            <p>Clean and simple design</p>
 
             <div class="price">$5</div>
 
@@ -358,11 +942,23 @@ footer {
                 <li>Basic formatting</li>
                 <li>PDF file</li>
             </ul>
+
+            <a href="#order" class="price-button">
+                Order Now
+            </a>
+
         </div>
 
 
-        <div class="card">
+        <div class="price-card popular">
+
+            <div class="popular-label">
+                MOST POPULAR
+            </div>
+
             <h3>Professional CV</h3>
+
+            <p>Modern design + professional content</p>
 
             <div class="price">$10</div>
 
@@ -371,11 +967,19 @@ footer {
                 <li>Professional wording</li>
                 <li>PDF file</li>
             </ul>
+
+            <a href="#order" class="price-button">
+                Order Now
+            </a>
+
         </div>
 
 
-        <div class="card">
+        <div class="price-card">
+
             <h3>Premium CV</h3>
+
+            <p>Premium design + full improvement</p>
 
             <div class="price">$15</div>
 
@@ -384,125 +988,168 @@ footer {
                 <li>Full CV improvement</li>
                 <li>PDF + revisions</li>
             </ul>
+
+            <a href="#order" class="price-button">
+                Order Now
+            </a>
+
         </div>
 
     </div>
 
+</div>
+
 </section>
 
 
-<!-- Samples -->
-<section class="section" id="samples">
+<!-- WHY CHOOSE US -->
 
-    <h2>CV Samples</h2>
+<section>
 
-    <p class="intro">
-        Professional CV styles for different career needs.
-    </p>
+<div class="container">
 
-    <div class="samples">
+    <div class="section-title">
 
-        <div class="sample">
-            <div class="sample-icon">📑</div>
-            <h3>Modern CV</h3>
-            <p>Professional modern layout</p>
-        </div>
+        <small>WHY CHOOSE US</small>
 
-        <div class="sample">
-            <div class="sample-icon">📄</div>
-            <h3>Simple CV</h3>
-            <p>Clean and easy to read</p>
-        </div>
-
-        <div class="sample">
-            <div class="sample-icon">✨</div>
-            <h3>Premium CV</h3>
-            <p>Elegant premium style</p>
-        </div>
+        <h2>Professional From Start to Finish</h2>
 
     </div>
 
-</section>
 
+    <div class="why">
 
-<!-- Why Choose Us -->
-<section class="section">
+        <div class="why-box">
 
-    <div class="features">
+            <div class="why-icon">⚡</div>
 
-        <div class="feature">
-            <div class="feature-icon">⚡</div>
             <h3>Fast Service</h3>
-            <p>Quick and convenient CV creation.</p>
+
+            <p>
+                Quick and convenient CV creation.
+            </p>
+
         </div>
 
-        <div class="feature">
-            <div class="feature-icon">🎯</div>
+
+        <div class="why-box">
+
+            <div class="why-icon">🎯</div>
+
             <h3>Job Focused</h3>
-            <p>Content designed for your target position.</p>
+
+            <p>
+                Content designed for your target position.
+            </p>
+
         </div>
 
-        <div class="feature">
-            <div class="feature-icon">💼</div>
+
+        <div class="why-box">
+
+            <div class="why-icon">💼</div>
+
             <h3>Professional</h3>
-            <p>Modern design that presents you professionally.</p>
+
+            <p>
+                Modern design that presents you professionally.
+            </p>
+
         </div>
 
     </div>
 
+</div>
+
 </section>
 
 
-<!-- Order -->
-<section class="section" id="order">
+<!-- ORDER -->
+
+<section id="order">
+
+<div class="container">
 
     <div class="cta">
 
-        <h2>Ready to Create Your CV?</h2>
+        <div>
 
-        <p>
-            Send us your information and we will
-            help turn it into a professional CV.
-        </p>
+            <h2>Ready to Get Your Professional CV?</h2>
 
-        <a class="button" href="#contact">
-            Contact Us
+            <p>
+                Contact us and let's create your perfect CV together.
+            </p>
+
+        </div>
+
+        <a href="#contact">
+            💬 Order Your CV →
         </a>
 
     </div>
 
+</div>
+
 </section>
 
 
-<!-- Contact -->
-<section class="section" id="contact">
+<!-- CONTACT -->
 
-    <h2>Contact Us</h2>
+<section id="contact">
 
-    <p class="intro">
-        Contact us to start creating your professional CV.
-    </p>
+<div class="container">
+
+    <div class="section-title">
+
+        <small>CONTACT</small>
+
+        <h2>Let's Create Your CV</h2>
+
+        <p>
+            Contact us to start creating your professional CV.
+        </p>
+
+    </div>
+
 
     <div class="contact">
 
         <div class="contact-box">
+
             <h3>📱 Phone / Telegram</h3>
-            <p>+855 XX XXX XXX</p>
+
+            <p>
+                +855 XX XXX XXX
+            </p>
+
         </div>
 
+
         <div class="contact-box">
+
             <h3>✉️ Email</h3>
-            <p>your@email.com</p>
+
+            <p>
+                your@email.com
+            </p>
+
         </div>
 
     </div>
 
+</div>
+
 </section>
 
 
+<!-- FOOTER -->
+
 <footer>
-    © 2026 Professional CV Service. All rights reserved.
+
+    © 2026 CV Design. All rights reserved.
+
 </footer>
+
 
 </body>
 </html>
