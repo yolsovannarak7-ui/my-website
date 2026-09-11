@@ -989,7 +989,7 @@ footer{
                 <li>PDF + revisions</li>
             </ul>
 
-            <a href="#order" class="price-button">
+            <a href="https://t.me/Yolsovannarak" target="_blank" class="price-button">
                 Order Now
             </a>
 
@@ -1082,7 +1082,7 @@ footer{
 
         </div>
 
-        <a href="#contact">
+        <a href="https://t.me/Yolsovannarak" target="_blank">
             💬 Order Your CV →
         </a>
 
@@ -1100,46 +1100,155 @@ footer{
 <div class="container">
 
     <div class="section-title">
-
-        <small>CONTACT</small>
-
+        <small>ORDER YOUR CV</small>
         <h2>Let's Create Your CV</h2>
-
         <p>
-            Contact us to start creating your professional CV.
+            Fill in your information and contact us on Telegram.
         </p>
-
     </div>
 
+    <div class="order-form">
 
-    <div class="contact">
+        <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" id="name" placeholder="Enter your name">
+        </div>
 
-        <div class="contact-box">
+        <div class="form-group">
+            <label>Phone Number</label>
+            <input type="text" id="phone" placeholder="Enter your phone number">
+        </div>
 
-            <h3>📱 Phone / Telegram</h3>
+        <div class="form-group">
+            <label>Job Position</label>
+            <input type="text" id="job" placeholder="Example: Receptionist">
+        </div>
 
-            <p>
-                +855 XX XXX XXX
-            </p>
+        <div class="form-group">
+            <label>Choose Package</label>
+
+            <select id="package">
+                <option>Basic CV - $5</option>
+                <option>Professional CV - $10</option>
+                <option>Premium CV - $15</option>
+            </select>
 
         </div>
 
+        <div class="form-group">
+            <label>Additional Information</label>
 
-        <div class="contact-box">
-
-            <h3>✉️ Email</h3>
-
-            <p>
-                your@email.com
-            </p>
+            <textarea
+                id="message"
+                rows="5"
+                placeholder="Tell us anything you want to include in your CV">
+            </textarea>
 
         </div>
+
+        <button onclick="sendOrder()" class="submit-btn">
+            💬 Send Order on Telegram
+        </button>
 
     </div>
 
 </div>
 
 </section>
+
+
+<style>
+
+.order-form{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(30,70,120,.08);
+    border:1px solid #e2ebf5;
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+.form-group label{
+    display:block;
+    font-weight:bold;
+    margin-bottom:7px;
+    color:#17345f;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+    padding:14px;
+    border:1px solid #d9e4f0;
+    border-radius:9px;
+    font-size:14px;
+    font-family:Arial,sans-serif;
+    outline:none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+    border-color:#1677ff;
+}
+
+.submit-btn{
+    width:100%;
+    border:none;
+    background:#1677ff;
+    color:white;
+    padding:15px;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.submit-btn:hover{
+    background:#0d63dc;
+}
+
+</style>
+
+
+<script>
+
+function sendOrder(){
+
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let job = document.getElementById("job").value;
+    let pack = document.getElementById("package").value;
+    let message = document.getElementById("message").value;
+
+    if(name === "" || phone === "" || job === ""){
+        alert("Please fill in your name, phone number and job position.");
+        return;
+    }
+
+    let text =
+        "📄 NEW CV ORDER%0A%0A" +
+        "👤 Name: " + encodeURIComponent(name) + "%0A" +
+        "📱 Phone: " + encodeURIComponent(phone) + "%0A" +
+        "💼 Job: " + encodeURIComponent(job) + "%0A" +
+        "💰 Package: " + encodeURIComponent(pack) + "%0A" +
+        "📝 Information: " + encodeURIComponent(message);
+
+    window.open(
+        "https://t.me/Yolsovannarak?text=" + text,
+        "_blank"
+    );
+}
+
+</script>
+
+
 
 
 <!-- FOOTER -->
